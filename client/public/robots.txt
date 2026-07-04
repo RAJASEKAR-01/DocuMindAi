@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /login
+Allow: /register
+
+# Private, authenticated app routes - no value being indexed, and shouldn't be crawled
+Disallow: /dashboard
+Disallow: /upload
+Disallow: /analysis/
+Disallow: /chat/
+Disallow: /history
+Disallow: /profile
+
+Sitemap: https://your-domain.vercel.app/sitemap.xml

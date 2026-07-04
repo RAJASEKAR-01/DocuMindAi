@@ -25,6 +25,12 @@ app.use(
     credentials: true, // required so the refresh-token httpOnly cookie is sent/received
   })
 );
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "DocuMind AI Backend is Running 🚀",
+  });
+});
 app.use(express.json({ limit: "2mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());

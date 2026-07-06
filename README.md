@@ -4,7 +4,7 @@
 
 Built on the MERN stack with Google Gemini, using a modern production-grade architecture: MVC + service layer on the backend, feature-based structure with Redux Toolkit (auth/session only) + TanStack Query (all server state) on the frontend.
 
-
+<img width="1877" height="888" alt="Screenshot 2026-07-06 110130" src="https://github.com/user-attachments/assets/0cf03ae9-adde-4d8d-b8d5-5e7da12cdfa7" />
 
 ---
 

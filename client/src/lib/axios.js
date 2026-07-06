@@ -7,13 +7,13 @@ const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
 // Main API client - sends the access token on every request, and the httpOnly
 // refresh cookie automatically (withCredentials).
 export const api = axios.create({
-  baseURL: `${BASE_URL}/api`,
+  baseURL: `${BASE_URL}/api/v1`,
   withCredentials: true,
 });
 
 // Separate plain client for the refresh call itself, to avoid interceptor recursion.
 const refreshClient = axios.create({
-  baseURL: `${BASE_URL}/api`,
+  baseURL: `${BASE_URL}/api/v1`,
   withCredentials: true,
 });
 

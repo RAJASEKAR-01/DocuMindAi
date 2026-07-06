@@ -13,7 +13,8 @@ Built on the MERN stack with Google Gemini, using a modern production-grade arch
 - **Redux Toolkit is used ONLY for auth/session state** (`user`, `accessToken`). Everything else — documents, chat, analytics — is server state owned entirely by **TanStack Query**, which handles caching, background refetching, and loading/error states automatically. This avoids the classic anti-pattern of Redux trying to mirror server data.
 - **Backend follows MVC + a service layer**: routes are thin, controllers only orchestrate request/response, and all business logic (Gemini prompting, PDF parsing, email sending) lives in `services/`. This keeps controllers readable and services independently testable.
 - **JWT access + refresh token rotation**: short-lived access tokens (15 min) are kept in memory (Redux) — never localStorage, to reduce XSS exposure. The refresh token lives in an httpOnly cookie and is rotated on every use. An Axios interceptor transparently refreshes an expired access token and retries the original request, queueing any concurrent requests during the refresh.
-
+- 
+<img width="1877" height="888" alt="Screenshot 2026-07-06 110130" src="https://github.com/user-attachments/assets/55ff14e2-f76d-4801-aa85-a2a4f20b2671" />
 ```
 DocuMindAI/
 ├── server/                      # Express API (MVC + services)

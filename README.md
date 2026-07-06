@@ -4,6 +4,8 @@
 
 Built on the MERN stack with Google Gemini, using a modern production-grade architecture: MVC + service layer on the backend, feature-based structure with Redux Toolkit (auth/session only) + TanStack Query (all server state) on the frontend.
 
+
+
 ---
 
 ## Architecture
@@ -14,7 +16,6 @@ Built on the MERN stack with Google Gemini, using a modern production-grade arch
 - **Backend follows MVC + a service layer**: routes are thin, controllers only orchestrate request/response, and all business logic (Gemini prompting, PDF parsing, email sending) lives in `services/`. This keeps controllers readable and services independently testable.
 - **JWT access + refresh token rotation**: short-lived access tokens (15 min) are kept in memory (Redux) — never localStorage, to reduce XSS exposure. The refresh token lives in an httpOnly cookie and is rotated on every use. An Axios interceptor transparently refreshes an expired access token and retries the original request, queueing any concurrent requests during the refresh.
 - 
-<img width="1877" height="888" alt="Screenshot 2026-07-06 110130" src="https://github.com/user-attachments/assets/55ff14e2-f76d-4801-aa85-a2a4f20b2671" />
 ```
 DocuMindAI/
 ├── server/                      # Express API (MVC + services)
